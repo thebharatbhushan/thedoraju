@@ -1,7 +1,7 @@
 Ⓒ Bharat Bhushan 
 kumarbharat0505@gmail.com
 
-# ask before use this code.
+# Ask before use this code.
 
 # Phaser 3 Webpack Project Template
 
