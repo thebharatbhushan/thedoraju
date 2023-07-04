@@ -17,7 +17,14 @@ class MyGame extends Phaser.Scene
     create ()
     {
        this.add.image(960,540, "loadingBG");
-       this.add.image(960,540, "loadingBar").setScale(0.5);
+       var loader = this.add.image(960,540, "loadingBar").setScale(0.5);
+       this.tweens.add({
+        targets: loader,
+        angle: 360, 
+        duration: 5000,
+        // ease: 'Linear',
+        repeat: -1 
+      });
     }
 }
 
