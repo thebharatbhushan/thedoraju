@@ -1,6 +1,8 @@
 import Phaser from 'phaser';
 import loadingBG from './assets/TheBharatBG.jpg';
 import loadingBar from './assets/loader.png';
+import welcome from './welcome';
+import gamenew from './gamestart';
 class MyGame extends Phaser.Scene
 {
     constructor ()
@@ -16,7 +18,7 @@ class MyGame extends Phaser.Scene
       
     create ()
     {
-       this.add.image(960,540, "loadingBG");
+    //    this.add.image(960,540, "loadingBG");
        var loader = this.add.image(960,540, "loadingBar").setScale(0.5);
        this.tweens.add({
         targets: loader,
@@ -25,6 +27,7 @@ class MyGame extends Phaser.Scene
         // ease: 'Linear',
         repeat: -1 
       });
+      
     }
 }
 
@@ -38,7 +41,7 @@ const config = {
         width: 1920,
         height: 1080
     },
-    scene: MyGame
+    scene: [welcome,gamenew]
 };
 
 const game = new Phaser.Game(config);
