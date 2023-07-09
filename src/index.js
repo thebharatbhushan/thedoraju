@@ -18,7 +18,7 @@ class MyGame extends Phaser.Scene
       
     create ()
     {
-    //    this.add.image(960,540, "loadingBG");
+       this.add.image(960,540, "loadingBG");
        var loader = this.add.image(960,540, "loadingBar").setScale(0.5);
        this.tweens.add({
         targets: loader,
@@ -27,6 +27,10 @@ class MyGame extends Phaser.Scene
         // ease: 'Linear',
         repeat: -1 
       });
+
+      setTimeout(() => {
+        this.scene.start('welcome')
+      }, 1000)
       
     }
 }
@@ -41,7 +45,16 @@ const config = {
         width: 1920,
         height: 1080
     },
-    scene: [welcome,gamenew]
+    physics:{
+	default: "arcade",
+		arcade: {		
+			debug: false
+			}
+		},
+    // scene: MyGame
+    scene: [MyGame, welcome, gamenew]
+    
+    
 };
 
 const game = new Phaser.Game(config);
